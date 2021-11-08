@@ -7,34 +7,25 @@ namespace HelloWorldCore
     {
         static void Main(string[] args)
         {
-            /* 1.
-            Console.WriteLine("Jak se jmenuješ?");
-
-            string name = Console.ReadLine();
-
-            Hello(name);
-            */
-            /* 2.
-            
-            Console.WriteLine("Napíš celé číslo:");
-            string cislo = Console.ReadLine();
-
-            int x = Vypocet(Convert.ToInt32(cislo));
-            Console.WriteLine("Výsledek pro "+ cislo + ": " + x);
-            */
-            /* 3. prevod F na C
-            ConvertFtoCandPrint();
-            */
-
-            /* 4 . WHILE a EXCEPTION
+            /* 5.
+             * 
              */
-            string input = "";
+            string name = "  Martin Novák  ";
 
-            Console.WriteLine("Program končí zadáním: x");
-            while (input != "x")
+            if (!string.IsNullOrEmpty(name)) // ! pred výrazom je negace
             {
-                input = ConvertFtoCandPrint();
+                //mam jmneo
             }
+
+            string name_trim = name.Trim(); 
+
+            Console.WriteLine(name);
+            Console.WriteLine(name_trim);
+
+            string[] items = name_trim.Split(" ");
+            string firstname = items[0];
+            string lastname = items[1];
+            Console.WriteLine("firstname: " + firstname + ", lastname:" + lastname);
 
         }
 
