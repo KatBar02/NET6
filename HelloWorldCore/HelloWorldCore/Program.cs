@@ -10,22 +10,56 @@ namespace HelloWorldCore
             /* 5.
              * 
              */
-            string name = "  Martin Novák  ";
+            //string name = "   Martin Novák   ";
 
-            if (!string.IsNullOrEmpty(name)) // ! pred výrazom je negace
+            //if (!string.IsNullOrEmpty(name)) // ! pred výrazom je negace
+            //{
+            //    //mam jmneo
+            //}
+
+            //Console.WriteLine("Meno nie je prazdne: " + !string.IsNullOrEmpty(name));
+
+            //string name_trim = name.Trim();
+
+            //Console.WriteLine(name);
+            //Console.WriteLine(name_trim);
+
+            //string[] items = name_trim.Split(" ");
+            //string firstname = items[0];
+            //string lastname = items[1];
+            //Console.WriteLine("firstname: " + firstname + ", lastname:" + lastname);
+
+
+            //bool Martin = name.Contains("martin", StringComparison.OrdinalIgnoreCase);
+            //Console.WriteLine("Obsahuje Martina: " + Martin);
+            ////alebo:
+            //if(name.ToLower() == "martin")
+            //{
+
+            //}
+            try
             {
-                //mam jmneo
+                string input_end = "";
+                Console.WriteLine("Program končí napsáním: X");
+                Console.WriteLine("Jak se jmenuješ?");
+                string name = Console.ReadLine().Trim();
+                Console.WriteLine("Kolik ti je let? (int)");
+                int age = int.Parse(Console.ReadLine().Trim());
+
+                while (input_end != "x")
+                {                                     
+             
+                    string name_age = "Jméno: " + name + ", Věk: " + age.ToString();
+
+                    File.AppendAllText("name.txt", DateTime.Now + ": " + name_age + Environment.NewLine);
+                }
+
             }
-
-            string name_trim = name.Trim(); 
-
-            Console.WriteLine(name);
-            Console.WriteLine(name_trim);
-
-            string[] items = name_trim.Split(" ");
-            string firstname = items[0];
-            string lastname = items[1];
-            Console.WriteLine("firstname: " + firstname + ", lastname:" + lastname);
+            catch (FormatException ex)
+            {
+                
+                    
+            }
 
         }
 
