@@ -21,19 +21,36 @@ namespace HelloWorldCore
             int x = Vypocet(Convert.ToInt32(cislo));
             Console.WriteLine("Výsledek pro "+ cislo + ": " + x);
             */
-
+            /* 3. prevod F na C
             ConvertFtoCandPrint();
+            */
+
+            /*
+             */
+            string input = "";
+
+            Console.WriteLine("Program končí zadáním: x");
+            while (input != "x")
+            {
+                input = ConvertFtoCandPrint();
+            }
+
         }
 
 
         /// <summary>
         ///  komentár cez /// mimo metodu - zobrazuje sa v tooltipe na metode
         /// </summary>
-        private static void ConvertFtoCandPrint()
+        static string ConvertFtoCandPrint()
         {
             Console.WriteLine("Zadej teplotu ve °F: ");
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Výsledek v °C: " + ToCelsius(x));
+            string input2 = Console.ReadLine();
+            if (input2 == "x")
+                return input2; //ak je to X tak týmto ConvertFtoCandPrint kočí, nemusí tu byť ELSE
+
+            int x = int.Parse(input2);
+            Console.WriteLine("Výsledek v °C: " + ToCelsius(x)); //Console.WriteLine($"{f}°F je {c}°C");
+            return input2;
         }
 
         static void Hello(string name)
@@ -77,7 +94,7 @@ namespace HelloWorldCore
         static double ToCelsius(double degreesF)
         {
             
-            return (degreesF + 32 )/1.8;
+            return (degreesF - 32) / 1.8;
         }
     }
 }
