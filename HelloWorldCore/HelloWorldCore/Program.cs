@@ -22,10 +22,20 @@ namespace HelloWorldCore
             Console.WriteLine("Výsledek pro "+ cislo + ": " + x);
             */
 
+            ConvertFtoCandPrint();
+        }
+
+
+        /// <summary>
+        ///  komentár cez /// mimo metodu - zobrazuje sa v tooltipe na metode
+        /// </summary>
+        private static void ConvertFtoCandPrint()
+        {
             Console.WriteLine("Zadej teplotu ve °F: ");
             int x = int.Parse(Console.ReadLine());
             Console.WriteLine("Výsledek v °C: " + ToCelsius(x));
         }
+
         static void Hello(string name)
         {
             string name5p = name;
@@ -59,8 +69,14 @@ namespace HelloWorldCore
             return result;
         }
 
+        /// <summary>
+        /// popis i s komentárom k output hodnotám
+        /// </summary>
+        /// <param name="degreesF"></param>
+        /// <returns>temperature in C</returns>
         static double ToCelsius(double degreesF)
         {
+            
             return (degreesF + 32 )/1.8;
         }
     }
