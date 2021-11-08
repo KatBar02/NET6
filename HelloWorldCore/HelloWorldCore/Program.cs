@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace HelloWorldCore
 {
@@ -25,7 +26,7 @@ namespace HelloWorldCore
             ConvertFtoCandPrint();
             */
 
-            /*
+            /* 4 . WHILE a EXCEPTION
              */
             string input = "";
 
@@ -43,13 +44,42 @@ namespace HelloWorldCore
         /// </summary>
         static string ConvertFtoCandPrint()
         {
+            //Console.WriteLine("Zadej teplotu ve °F: ");
+            //string input2 = Console.ReadLine();
+            //if (input2 == "x")
+            //    return input2; //ak je to X tak týmto ConvertFtoCandPrint kočí, nemusí tu byť ELSE
+
+            //int x = int.Parse(input2);
+            //Console.WriteLine("Výsledek v °C: " + ToCelsius(x)); //Console.WriteLine($"{f}°F je {c}°C");
+            //return input2;
+
+
             Console.WriteLine("Zadej teplotu ve °F: ");
             string input2 = Console.ReadLine();
-            if (input2 == "x")
-                return input2; //ak je to X tak týmto ConvertFtoCandPrint kočí, nemusí tu byť ELSE
+            try
+            {
+                int x = int.Parse(input2);
+                Console.WriteLine("Výsledek v °C: " + ToCelsius(x)); //Console.WriteLine($"{f}°F je {c}°C");
+            }
+            catch (FormatException ex)
+            {
+                /*
+                 * konkrétns výnimka na formát premennej
+                 * message + nový řádek, súbor sa vytvorí tam, kde sa ten program spustil
+                 * C:\Users\barto\source\repos\skolenie\HelloWorldCore\HelloWorldCore\bin\Debug\net5.0
+                 */
+                if (input2 != "x")
+                    File.AppendAllText("errorlog.txt", DateTime.Now + ": " + ex.Message + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                /*
+                 * message + nový řádek, súbor sa vytvorí tam, kde sa ten program spustil
+                 * C:\Users\barto\source\repos\skolenie\HelloWorldCore\HelloWorldCore\bin\Debug\net5.0
+                 */
+                File.AppendAllText("errorlog.txt", "General Exception: " + DateTime.Now + ": " + ex.Message + Environment.NewLine); 
+            }
 
-            int x = int.Parse(input2);
-            Console.WriteLine("Výsledek v °C: " + ToCelsius(x)); //Console.WriteLine($"{f}°F je {c}°C");
             return input2;
         }
 
