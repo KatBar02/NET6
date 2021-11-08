@@ -7,68 +7,27 @@ namespace HelloWorldCore
     {
         static void Main(string[] args)
         {
-            /* 5.
-             * 
-             */
-            //string name = "   Martin Novák   ";
+            //DateTime date = new DateTime(2021, 08, 11, 19, 0, 0);
 
-            //if (!string.IsNullOrEmpty(name)) // ! pred výrazom je negace
-            //{
-            //    //mam jmneo
-            //}
+            //DateTime now = DateTime.Now;
 
-            //Console.WriteLine("Meno nie je prazdne: " + !string.IsNullOrEmpty(name));
+            //var twoweeks = date.AddDays(14);
+            //Console.WriteLine(twoweeks);
 
-            //string name_trim = name.Trim();
+            //string day = date.DayOfWeek.ToString();
+            //Console.WriteLine(day);
 
-            //Console.WriteLine(name);
-            //Console.WriteLine(name_trim);
+            //TimeSpan diff = now - date; //odčítanie dátumov, TimeSpan je datový typ
 
-            //string[] items = name_trim.Split(" ");
-            //string firstname = items[0];
-            //string lastname = items[1];
-            //Console.WriteLine("firstname: " + firstname + ", lastname:" + lastname);
+            Console.WriteLine("Zadej datum narození: ");
+            DateTime birthdate = DateTime.Parse(Console.ReadLine());
 
+            TimeSpan diff = DateTime.Now - birthdate;
+            if (diff.TotalDays / 365 > 18)
+                Console.WriteLine("Už Vám bylo 18. Je Vám: " + (diff.TotalDays / 365));
+            else
+                Console.WriteLine("Je Vám míň než 18. Je Vám: " + (diff.TotalDays / 365));
 
-            //bool Martin = name.Contains("martin", StringComparison.OrdinalIgnoreCase);
-            //Console.WriteLine("Obsahuje Martina: " + Martin);
-            ////alebo:
-            //if(name.ToLower() == "martin")
-            //{
-
-            //}
-            try
-            {
-                Console.WriteLine("Program končí napsáním: X");
-                
-
-                while (true)
-                {
-                    Console.WriteLine("Jak se jmenuješ?");
-                    string input = Console.ReadLine().Trim();
-                    string name = input;
-
-                    if (input == "x")
-                        return;
-
-                    Console.WriteLine("Kolik ti je let? (int)");
-                    input = Console.ReadLine().Trim();
-
-                    if (input == "x")
-                        return;
-
-                    int age = int.Parse(input);
-                    string name_age = "Jméno: " + name + "; Věk: " + age;
-
-                    File.AppendAllText("name.txt", DateTime.Now + ": " + name_age + Environment.NewLine);
-                }
-
-            }
-            catch (FormatException ex)
-            {
-                File.AppendAllText("name.txt", DateTime.Now + "Chyba: " + ex.Message + Environment.NewLine);
-
-            }
 
         }
 
