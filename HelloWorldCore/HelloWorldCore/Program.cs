@@ -11,13 +11,18 @@ namespace HelloWorldCore
             //string name = Console.ReadLine();
 
             //Hello(name);
+            /*
 
-            Console.WriteLine("Napíš číslo:");
+            Console.WriteLine("Napíš celé číslo:");
             string cislo = Console.ReadLine();
 
             int x = Vypocet(Convert.ToInt32(cislo));
-            Console.WriteLine("Vysledek pro "+ cislo + ": " + x);
+            Console.WriteLine("Výsledek pro "+ cislo + ": " + x);
+            */
 
+            Console.WriteLine("Stupnů C: ");
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine("Výsledek: " + ToCelsius(x));
         }
         static void Hello(string name)
         {
@@ -47,9 +52,14 @@ namespace HelloWorldCore
         static int Vypocet(int cislo)
         {          
             int result = cislo * 2 + 10;
-            int x = 55;
-            Console.WriteLine("x: " + x);
+            //int x = 55;
+            //Console.WriteLine("x: " + x);
             return result;
+        }
+
+        static double ToCelsius(double degreesF)
+        {
+            return (degreesF + 32 )/1.8;
         }
     }
 }
