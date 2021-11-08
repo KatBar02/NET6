@@ -39,17 +39,26 @@ namespace HelloWorldCore
             //}
             try
             {
-                string input_end = "";
                 Console.WriteLine("Program končí napsáním: X");
-                Console.WriteLine("Jak se jmenuješ?");
-                string name = Console.ReadLine().Trim();
-                Console.WriteLine("Kolik ti je let? (int)");
-                int age = int.Parse(Console.ReadLine().Trim());
+                
 
-                while (input_end != "x")
-                {                                     
-             
-                    string name_age = "Jméno: " + name + ", Věk: " + age.ToString();
+                while (true)
+                {
+                    Console.WriteLine("Jak se jmenuješ?");
+                    string input = Console.ReadLine().Trim();
+                    string name = input;
+
+                    if (input == "x")
+                        return;
+
+                    Console.WriteLine("Kolik ti je let? (int)");
+                    input = Console.ReadLine().Trim();
+
+                    if (input == "x")
+                        return;
+
+                    int age = int.Parse(input);
+                    string name_age = "Jméno: " + name + "; Věk: " + age;
 
                     File.AppendAllText("name.txt", DateTime.Now + ": " + name_age + Environment.NewLine);
                 }
@@ -57,8 +66,8 @@ namespace HelloWorldCore
             }
             catch (FormatException ex)
             {
-                
-                    
+                File.AppendAllText("name.txt", DateTime.Now + "Chyba: " + ex.Message + Environment.NewLine);
+
             }
 
         }
