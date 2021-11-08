@@ -23,7 +23,7 @@ namespace HelloWorldCore
             DateTime birthdate = DateTime.Parse(Console.ReadLine());
 
             TimeSpan diff = DateTime.Now - birthdate;
-            if (diff.TotalDays / 365 > 18)
+            if (diff.TotalDays / 365 >= 18)
                 Console.WriteLine("Už Vám bylo 18. Je Vám: " + (diff.TotalDays / 365));
             else
                 Console.WriteLine("Je Vám míň než 18. Je Vám: " + (diff.TotalDays / 365));
