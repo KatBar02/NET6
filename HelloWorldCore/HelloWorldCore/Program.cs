@@ -6,13 +6,15 @@ namespace HelloWorldCore
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Jak se jmenuješ?");
+            /* 1.
+            Console.WriteLine("Jak se jmenuješ?");
 
-            //string name = Console.ReadLine();
+            string name = Console.ReadLine();
 
-            //Hello(name);
-            /*
-
+            Hello(name);
+            */
+            /* 2.
+            
             Console.WriteLine("Napíš celé číslo:");
             string cislo = Console.ReadLine();
 
@@ -20,9 +22,9 @@ namespace HelloWorldCore
             Console.WriteLine("Výsledek pro "+ cislo + ": " + x);
             */
 
-            Console.WriteLine("Stupnů C: ");
+            Console.WriteLine("Zadej teplotu ve °F: ");
             int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Výsledek: " + ToCelsius(x));
+            Console.WriteLine("Výsledek v °C: " + ToCelsius(x));
         }
         static void Hello(string name)
         {
