@@ -9,16 +9,16 @@ namespace HelloWorldCore
 {
     class MethodsDay2
     {
-        static void Main(string[] args)
-        {
-            //1.
-            //Console.WriteLine("Zadej datum narození: ");
-            //DateTime birthdate = DateTime.Parse(Console.ReadLine()); ;
-            //Console.WriteLine("Je Vám: " + YourAge(birthdate) + " let");
+        //static void Main(string[] args)
+        //{
+        //    //1.
+        //    //Console.WriteLine("Zadej datum narození: ");
+        //    //DateTime birthdate = DateTime.Parse(Console.ReadLine()); ;
+        //    //Console.WriteLine("Je Vám: " + YourAge(birthdate) + " let");
 
-            OldestPerson();
+        //    OldestPerson();
 
-        }
+        //}
 
         private static void OldestPerson()
         {
@@ -39,7 +39,7 @@ namespace HelloWorldCore
                 }
 
             }
-            Console.WriteLine($"Nejstarčí je{max_name} s věkem {max_age}");
+            Console.WriteLine($"Nejstarší je {max_name} s věkem {max_age}");
         }
 
         static int YourAge(DateTime birthdate)

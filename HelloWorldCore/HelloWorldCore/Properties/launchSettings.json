@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HelloWorldCore": {
+      "commandName": "Project"
+    },
+    "newProfile1": {
+      "commandName": "Executable"
+    }
+  }
+}

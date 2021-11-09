@@ -5,31 +5,31 @@ namespace HelloWorldCore
 {
     class MethodsDay1
     {
-        static void Main(string[] args)
-        {
-            //DateTime date = new DateTime(2021, 08, 11, 19, 0, 0);
+        //static void Main(string[] args)
+        //{
+        //    //DateTime date = new DateTime(2021, 08, 11, 19, 0, 0);
 
-            //DateTime now = DateTime.Now;
+        //    //DateTime now = DateTime.Now;
 
-            //var twoweeks = date.AddDays(14);
-            //Console.WriteLine(twoweeks);
+        //    //var twoweeks = date.AddDays(14);
+        //    //Console.WriteLine(twoweeks);
 
-            //string day = date.DayOfWeek.ToString();
-            //Console.WriteLine(day);
+        //    //string day = date.DayOfWeek.ToString();
+        //    //Console.WriteLine(day);
 
-            //TimeSpan diff = now - date; //odčítanie dátumov, TimeSpan je datový typ
+        //    //TimeSpan diff = now - date; //odčítanie dátumov, TimeSpan je datový typ
 
-            Console.WriteLine("Zadej datum narození: ");
-            DateTime birthdate = DateTime.Parse(Console.ReadLine());
+        //    Console.WriteLine("Zadej datum narození: ");
+        //    DateTime birthdate = DateTime.Parse(Console.ReadLine());
 
-            TimeSpan diff = DateTime.Now - birthdate;
-            if (diff.TotalDays / 365 >= 18)
-                Console.WriteLine("Už Vám bylo 18. Je Vám: " + (diff.TotalDays / 365));
-            else
-                Console.WriteLine("Je Vám míň než 18. Je Vám: " + (diff.TotalDays / 365));
+        //    TimeSpan diff = DateTime.Now - birthdate;
+        //    if (diff.TotalDays / 365 >= 18)
+        //        Console.WriteLine("Už Vám bylo 18. Je Vám: " + (diff.TotalDays / 365));
+        //    else
+        //        Console.WriteLine("Je Vám míň než 18. Je Vám: " + (diff.TotalDays / 365));
 
 
-        }
+        //}
 
 
         /// <summary>
