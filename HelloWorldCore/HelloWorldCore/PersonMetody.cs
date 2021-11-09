@@ -11,13 +11,13 @@ namespace HelloWorldCore
     {
         static void Main(string[] args)
         {
-            Car c1 = new Car();
+            Person p = new Person("Martin", "Malík");
+            p.Birthdate = new DateTime(2010, 12, 02);
 
-            c1.PlateNumber = "1a1 3636";
-            c1.Color = "blue";
-            c1.Kilometers = 21455.21;
+            Person p4 = new Person("Martin", "Malík", new DateTime(2010, 12, 02));
+            Console.WriteLine(p4); // = Console.WriteLine(p4.ToString());
 
-            
+            Car c = new Car("1a1 3636", "blue", 32000);
         }
 
         private static void StarsiOsoba()

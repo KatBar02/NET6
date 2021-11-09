@@ -8,7 +8,7 @@ namespace HelloWorldCore.Model
 {
     class Invoice
     {
-        public string InvoiceTo { get; set; } 
+        public string Customer { get; set; } 
         public string Product { get; set; } 
         public double Price { get; set; } 
     }
