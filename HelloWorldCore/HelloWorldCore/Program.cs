@@ -3,7 +3,7 @@ using System.IO;
 
 namespace HelloWorldCore
 {
-    class Program
+    class MethodsDay1
     {
         static void Main(string[] args)
         {
@@ -119,5 +119,8 @@ namespace HelloWorldCore
             
             return (degreesF - 32) / 1.8;
         }
+
+
+        
     }
 }
