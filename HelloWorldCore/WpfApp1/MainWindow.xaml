@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Hlavní okno" Height="450" Width="500">
+    <Grid Background="#FF88D381" RenderTransformOrigin="0.5,0.5" Margin="0,0,-1,0">
+        <Button x:Name="Tlacitko" Content="Save" Margin="0,142,0,0" RenderTransformOrigin="0.293,0.527" Background="#FF734BDC" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Width="123" Click="Button_Click" Height="40" VerticalAlignment="Top"/>
+        <TextBlock x:Name="PopisTlacitka" HorizontalAlignment="Left" Margin="34,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="42" FontSize="22"><Run Text="Zadej své jméno"/><Run Language="sk-sk" Text=":"/></TextBlock>
+        <TextBox x:Name="textJmeno" HorizontalAlignment="Left" Height="32" Margin="212,61,0,0" Text="Jméno" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" FontSize="22" Foreground="LightGray" Background="White"/>
+        <TextBlock x:Name="textVyselek" HorizontalAlignment="Center" Margin="0,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Width="433" Height="129" Text=""/>
 
     </Grid>
 </Window>

@@ -24,5 +24,36 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //MessageBox.Show("klik!");
+            
+            textVyselek.Text = Hello(textJmeno.Text);
+        }
+
+        static string Hello(string name)
+        {
+            string name5p = name;
+
+            if (name == "Lukáš")
+            {
+                name5p = "Lukáši";
+            }
+            else if (name == "Karel")
+            {
+                name5p = "Karle";
+            }
+            else if (name == "Petr")
+            {
+                name5p = "Petře";
+            }
+            else
+            {
+                name5p += ", omlouvám se, ale tvoje jméno neumím skloňovat.";
+            }
+
+            return "Ahoj " + name5p;
+        }
     }
 }
