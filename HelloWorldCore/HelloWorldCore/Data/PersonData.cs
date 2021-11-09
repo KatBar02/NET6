@@ -22,5 +22,24 @@ namespace HelloWorldCore.Data
             line += Environment.NewLine;
             File.AppendAllText(personDataFile, line);
         }
+
+        public static List<Person> LoadPerson()
+        {
+            List<Person> people = new List<Person>();       //List<int> numbers = new List<int>(); = var numbers = new List<int>();
+
+            var lines = File.ReadAllLines(personDataFile);
+
+            foreach(var line in lines)
+            {
+                var items = line.Split(';');
+                Person p = new Person(items[0],items[1],DateTime.Parse(items[2])) ;
+                p.HomeAddress.City = items[3];
+                p.HomeAddress.Street = items[4];
+
+                people.Add(p);
+            }
+
+            return people;
+        }
     }
 }

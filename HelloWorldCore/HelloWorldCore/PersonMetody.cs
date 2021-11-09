@@ -20,12 +20,19 @@ namespace HelloWorldCore
 
             //Car c = new Car("1a1 3636", "blue", 32000);
 
-            Person p5 = new Person("Sára", "Kolumbusová", new DateTime(1810, 01, 15));
-            //p5.HomeAddress = new Address("Praha","česká"); // musí byť inicializovaná/vytvorená Address pred priradením hodnoty, môže byť už v Person v konstruktore
-            p5.HomeAddress.City = "Londýn";
-            p5.HomeAddress.Street = "Londýnská";
-            //Console.WriteLine(p5);
-            PersonData.SavePerson(p5);
+            //Person p5 = new Person("Sára", "Kolumbusová", new DateTime(1810, 01, 15));
+            ////p5.HomeAddress = new Address("Praha","česká"); // musí byť inicializovaná/vytvorená Address pred priradením hodnoty, môže byť už v Person v konstruktore
+            //p5.HomeAddress.City = "Londýn";
+            //p5.HomeAddress.Street = "Londýnská";
+            ////Console.WriteLine(p5);
+            //PersonData.SavePerson(p5);
+
+            var people = PersonData.LoadPerson();
+            Console.WriteLine(people.Count);
+
+
+
+
         }
 
         private static void StarsiOsoba()
