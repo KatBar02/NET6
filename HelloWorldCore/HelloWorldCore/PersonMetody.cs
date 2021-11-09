@@ -28,8 +28,14 @@ namespace HelloWorldCore
             //PersonData.SavePerson(p5);
 
             var people = PersonData.LoadPerson();
-            Console.WriteLine(people.Count);
+            //Console.WriteLine(people);
+            List <string> people_name = new List<string>();
 
+            foreach( var p in people)
+            {
+                people_name.Add(p.FirstName + " " + p.LastName);
+            }
+            Console.WriteLine(string.Join("," ,people_name));
 
 
 
