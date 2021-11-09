@@ -11,14 +11,17 @@ namespace HelloWorldCore.Model
         //konstruktor aby sa to dalo písať i ako Person p1 = new Person("x","y");
         public Person()
         {
+            HomeAddress = new Address();
         }
         public Person(string firstname, string lastname)
         {
+            HomeAddress = new Address();
             FirstName = firstname;
             LastName = lastname;
         }
         public Person(string firstname, string lastname, DateTime birth)
         {
+            HomeAddress = new Address();
             FirstName = firstname;
             LastName = lastname;
             Birthdate = birth;
@@ -27,6 +30,7 @@ namespace HelloWorldCore.Model
         //vlastnosti třídy
         public string FirstName { get; set; } //prvá vlastnost Person
         public string LastName { get; set; } //druhá vlastnost Person
+        public Address HomeAddress { get; set; } // vlastnos typu třídy ADDRESS
         public DateTime Birthdate { get; set; } //tretí vlastnost Person
         public int Age() //čtvrtá vypočítaná vlastnost Person
         {
@@ -35,7 +39,8 @@ namespace HelloWorldCore.Model
         }
         public override string ToString() // override = nededí z rodiče
         {
-            return FirstName + " " + LastName;
+            return FirstName + " " + LastName + " Adresa: " + HomeAddress.City + ", " + HomeAddress.Street;
         }
+        
     }
 }

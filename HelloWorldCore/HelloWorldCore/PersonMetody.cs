@@ -11,13 +11,18 @@ namespace HelloWorldCore
     {
         static void Main(string[] args)
         {
-            Person p = new Person("Martin", "Malík");
-            p.Birthdate = new DateTime(2010, 12, 02);
+            //Person p = new Person("Martin", "Malík");
+            //p.Birthdate = new DateTime(2010, 12, 02);
 
-            Person p4 = new Person("Martin", "Malík", new DateTime(2010, 12, 02));
-            Console.WriteLine(p4); // = Console.WriteLine(p4.ToString());
+            //Person p4 = new Person("Martin", "Malík", new DateTime(2010, 12, 02));
+            //Console.WriteLine(p4); // = Console.WriteLine(p4.ToString());
 
-            Car c = new Car("1a1 3636", "blue", 32000);
+            //Car c = new Car("1a1 3636", "blue", 32000);
+
+            Person p5 = new Person("Martin", "Malík", new DateTime(2010, 12, 02));
+            //p5.HomeAddress = new Address("Praha","česká"); // musí byť inicializovaná/vytvorená Address pred priradením hodnoty, môže byť už v Person v konstruktore
+            p5.HomeAddress.City = "Praha";
+            Console.WriteLine(p5);
         }
 
         private static void StarsiOsoba()
