@@ -31,7 +31,9 @@ namespace HelloWorldCore.Model
         public string FirstName { get; set; } //prvá vlastnost Person
         public string LastName { get; set; } //druhá vlastnost Person
         public Address HomeAddress { get; set; } = new Address(); // vlastnos typu třídy ADDRESS 
-                                                    // = new Address(); je ekvivalent k vytváraniu v každom jednom konstruktore, ADDRESS bude vždy inicializovaná
+                                                                  // = new Address(); je ekvivalent k vytváraniu v každom jednom konstruktore, ADDRESS bude vždy inicializovaná
+
+        public List<Car> Cars { get; set; } = new List<Car>();  //aby mohla mať jedna osoba viac áut
         public DateTime Birthdate { get; set; } //tretí vlastnost Person
         public int Age() //čtvrtá vypočítaná vlastnost Person
         {
