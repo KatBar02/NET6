@@ -27,6 +27,7 @@ namespace HelloWorldCore
             var result4 = numbers.Average();
             Console.WriteLine("prumer: " + result4);
             /// 5. kolik obsahuje pole kladných čísel
+            //var result5 = numbers.Count(number => number >= 0);
             var result5 = numbers.Where(number => number >= 0).Count();
             Console.WriteLine("pocet kladne: " + result5);
             /// 6. kolik obsahuje pole záporných čísel
@@ -39,6 +40,12 @@ namespace HelloWorldCore
             var result8 = numbers.Where(number => number >= 0).Sum();
             Console.WriteLine("sum kladnych: " + result8);
 
+            // 9.
+            var result9 = numbers.OrderBy(n => n).Skip(3).Sum();
+            Console.WriteLine("sum všech krome prvných 3 nejmenších: " + result9);
+            // 10.
+            var result10 = numbers.OrderByDescending(n => Math.Abs(n)).Take(3);
+            Console.WriteLine("10: " + string.Join(", ", result10));
         }
 
         private static void LINQoperator(int[] numbers)
