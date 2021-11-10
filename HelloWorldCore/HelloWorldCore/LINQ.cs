@@ -11,7 +11,15 @@ namespace HelloWorldCore
 
         static void Main(string[] args)
         {
+            var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
+            var result = strings.Select(slovo => slovo.ToUpper() + " " + slovo);
+            Console.WriteLine(string.Join(", ", result));
+
+        }
+
+        private static void PoleUpper()
+        {
             var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
             var result = strings.Select(slovo => slovo.ToUpper());
@@ -19,7 +27,6 @@ namespace HelloWorldCore
             {
                 Console.WriteLine(item);
             }
-
         }
 
         private static void NumToText()
