@@ -8,18 +8,18 @@ namespace HelloWorldCore
 {
     class MethodsDay3
     {
-        static void Main(string[] args)
-        {
-            //Console.WriteLine(DayNameCZ(2));
-            //Console.WriteLine(DayNameArrayCZ(2));
-            //Console.WriteLine(DayNameListCZ(2));
-            //Console.WriteLine(IsWorkDay(2));
-            //Console.WriteLine(DayNumberCZ("štvrtok"));
-            //Console.WriteLine(DayNumberArrayCZ("štvrtok"));
-            Console.WriteLine(DayNumberListCZ("štvrtok"));
+        //static void Main(string[] args)
+        //{
+        //    //Console.WriteLine(DayNameCZ(2));
+        //    //Console.WriteLine(DayNameArrayCZ(2));
+        //    //Console.WriteLine(DayNameListCZ(2));
+        //    //Console.WriteLine(IsWorkDay(2));
+        //    //Console.WriteLine(DayNumberCZ("štvrtok"));
+        //    //Console.WriteLine(DayNumberArrayCZ("štvrtok"));
+        //    Console.WriteLine(DayNumberListCZ("štvrtok"));
 
 
-        }
+        //}
 
         public static string DayNameCZ(int dayNmbr)
         {
@@ -109,9 +109,9 @@ namespace HelloWorldCore
         public static int DayNumberListCZ(string dayName)
         {
             List<string> days = new List<string> { "pondelok", "utorok", "streda", "štvrtok", "piatok" };
-            return days.BinarySearch(dayName.ToLower()) +1;
+            //return days.BinarySearch(dayName.ToLower()) + 1;
+            return days.IndexOf(dayName.ToLower()) + 1;
 
-            
         }
     }
 }
