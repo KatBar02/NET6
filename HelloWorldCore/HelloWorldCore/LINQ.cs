@@ -11,10 +11,20 @@ namespace HelloWorldCore
 
         static void Main(string[] args)
         {
+            
+
+        }
+
+        private static void NumToText()
+        {
             var numbers = new[] { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
             var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
-
+            var result = numbers.Select(n => strings[n]);
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void ukoly2(int[] numbers)
