@@ -38,7 +38,9 @@ namespace HelloWorldCore
             //Console.WriteLine(string.Join("," ,people_name));
 
             Point2D point = new Point2D(5,10);
-            Console.WriteLine(point.ToString());
+            Point2D point2 = new Point2D(2, 4);
+            //Console.WriteLine(point.ToString());
+            Console.WriteLine(SumPoint(point, point2));
         }
 
         private static void StarsiOsoba()
@@ -59,6 +61,11 @@ namespace HelloWorldCore
 
             Person oldest = p1.Age() >= p2.Age() ? p1 : p2;
             Console.WriteLine("Nejstarší je: " + oldest.FirstName + " " + oldest.LastName);
+        }
+
+        private static string SumPoint (Point2D p1, Point2D p2)
+        {
+            return $"Vysledek pro p1 = [{p1.X},{p1.Y}] a p2 = [{p2.X},{p2.Y}] je [{p1.X+p2.X},{p1.Y+p2.Y}]";
         }
     }
 }
