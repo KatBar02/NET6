@@ -65,7 +65,7 @@ namespace HelloWorldCore
 
         private static string SumPoint (Point2D p1, Point2D p2)
         {
-            return $"Vysledek pro p1 = [{p1.X},{p1.Y}] a p2 = [{p2.X},{p2.Y}] je [{p1.X+p2.X},{p1.Y+p2.Y}]";
+            return $"Vysledek sčítání pro body p1 = [{p1.X},{p1.Y}] a p2 = [{p2.X},{p2.Y}] je [{p1.X+p2.X},{p1.Y+p2.Y}]";
         }
     }
 }
