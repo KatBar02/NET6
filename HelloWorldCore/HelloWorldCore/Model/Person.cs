@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorldCore.Model
 {
-    class Person
+    public class Person
     {
         //konstruktor aby sa to dalo písať i ako Person p1 = new Person("x","y");
         public Person()

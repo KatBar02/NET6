@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorldCore.Model
 {
-    class Address
+    public class Address
     {
         public Address(string city, string street)
         {

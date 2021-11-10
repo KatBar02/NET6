@@ -76,7 +76,7 @@ namespace HelloWorldCore
             return input2;
         }
 
-        static void Hello(string name)
+        public static void Hello(string name)
         {
             string name5p = name;
 

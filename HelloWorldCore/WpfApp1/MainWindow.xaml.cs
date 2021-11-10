@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HelloWorldCore.Model;
 
 namespace WpfApp1
 {
@@ -54,6 +55,17 @@ namespace WpfApp1
             }
 
             return "Ahoj " + name5p;
+        }
+
+        private void btnDetailOsoby_Click(object sender, RoutedEventArgs e)
+        {
+            Person p = new Person();
+            p.FirstName = "Alice";
+            p.LastName = "Smith";
+            p.Birthdate = new DateTime(2020,01,01);
+            PersonDetail pdwindow = new PersonDetail(p);
+            pdwindow.Show();
+
         }
     }
 }

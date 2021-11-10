@@ -5,7 +5,10 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorldCore", "HelloWorldCore\HelloWorldCore.csproj", "{711B6BDE-AA54-426B-AA1E-D2B85E939423}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{710A79E7-9C6C-4684-BAF2-FBAFF92DFCA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{710A79E7-9C6C-4684-BAF2-FBAFF92DFCA9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{711B6BDE-AA54-426B-AA1E-D2B85E939423} = {711B6BDE-AA54-426B-AA1E-D2B85E939423}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorldCore.Model
 {
-    class Car
+    public class Car
     {
         public Car()
         {
