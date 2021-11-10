@@ -27,18 +27,18 @@ namespace HelloWorldCore
             ////Console.WriteLine(p5);
             //PersonData.SavePerson(p5);
 
-            var people = PersonData.LoadPerson();
-            //Console.WriteLine(people);
-            List <string> people_name = new List<string>();
+            //var people = PersonData.LoadPerson();
+            ////Console.WriteLine(people);
+            //List <string> people_name = new List<string>();
 
-            foreach( var p in people)
-            {
-                people_name.Add(p.FirstName + " " + p.LastName);
-            }
-            Console.WriteLine(string.Join("," ,people_name));
+            //foreach( var p in people)
+            //{
+            //    people_name.Add(p.FirstName + " " + p.LastName);
+            //}
+            //Console.WriteLine(string.Join("," ,people_name));
 
-
-
+            Point2D point = new Point2D(5,10);
+            Console.WriteLine(point.ToString());
         }
 
         private static void StarsiOsoba()
