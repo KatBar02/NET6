@@ -11,7 +11,14 @@ namespace HelloWorldCore
 
         static void Main(string[] args)
         {
-            
+
+            var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+            var result = strings.Select(slovo => slovo.ToUpper());
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
 
         }
 
