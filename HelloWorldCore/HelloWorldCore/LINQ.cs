@@ -11,15 +11,39 @@ namespace HelloWorldCore
 
         static void Main(string[] args)
         {
-            int[] numbers = { -2079, -498, 2920, -1856, 332, -2549, -674, -120, -992, 2782, 320, -524, 135, 952, 1868, 2509, -230, -138, -904, -480 };
+            var numbers = new[] { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
 
+        }
+
+        private static void ukoly2(int[] numbers)
+        {
+            numbers = new[] { -2079, -498, 2920, -1856, 332, -2549, -674, -120, -992, 2782, 320, -524, 135, 952, 1868, 2509, -230, -138, -904, -480 };
+            //select - transformace do nove upavené kolekce
+            var result11 = numbers.Select(number => number + 10);
+            //numbers = numbers.Select(number => number + 10); upraví existujúcu kolekci
+            foreach (var item in result11)
+            {
+                Console.WriteLine(item);
+            }
+
+            //transformovat úkol 10 na ABS čísla
+            var result12 = numbers
+                .Select(number => Math.Abs(number))
+                .OrderByDescending(number => number)
+                .Take(3); ;
+            Console.WriteLine("12: " + string.Join(", ", result12));
+        }
+
+        private static void ukoly1(int[] numbers)
+        {
             /// 1. počet prvků v poli
             var result1 = numbers.Count();
-            Console.WriteLine("počet prvku: "+ result1);
+            Console.WriteLine("počet prvku: " + result1);
             /// 2. největší hodnotu
             var result2 = numbers.Max();
-            Console.WriteLine("max: "+ result2);
+            Console.WriteLine("max: " + result2);
             /// 3. nejmenší hodnotu
             var result3 = numbers.Min();
             Console.WriteLine("min: " + result3);
