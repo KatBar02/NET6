@@ -13,6 +13,9 @@ namespace HelloWorldCore.Model
             X = x;
             Y = y;
         }
+        public Point2D()
+        {
+        }
         public int X { get; set; }
         public int Y { get; set; }
         public int Plocha()
