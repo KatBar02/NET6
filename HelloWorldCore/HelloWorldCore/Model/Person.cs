@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,9 @@ namespace HelloWorldCore.Model
                                                                   // = new Address(); je ekvivalent k vytváraniu v každom jednom konstruktore, ADDRESS bude vždy inicializovaná
 
         public List<Car> Cars { get; set; } = new List<Car>();  //aby mohla mať jedna osoba viac áut
+        [NotMapped] // anotace pre ignorovanie pri prenose do DTB, z property nebude nový stĺpec
+        public int CarsCount { get { return Cars.Count(); } } //nie je metoda pretože to chcem v DataGrif v hlavnom okne, len na čítanie
+
         public DateTime Birthdate { get; set; } //tretí vlastnost Person
         public int Age() //čtvrtá vypočítaná vlastnost Person
         {
