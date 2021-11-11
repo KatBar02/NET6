@@ -34,7 +34,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            person.FirstName = txtFirstName.Text;
+            person.FirstName = txtFirstName.Text; 
             person.LastName = txtLastName.Text;
 
         }

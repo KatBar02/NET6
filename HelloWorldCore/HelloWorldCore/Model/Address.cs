@@ -18,6 +18,11 @@ namespace HelloWorldCore.Model
             //ctor pre auto vyytvorenie prázneho konstruktora
         }
         public string Street { get; set; }
-        public string City { get; set; } 
+        public string City { get; set; }
+
+        public override string ToString()
+        {
+            return Street + " " + City;
+        }
     }
 }

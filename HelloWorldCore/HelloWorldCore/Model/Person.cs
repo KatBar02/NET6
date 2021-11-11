@@ -28,7 +28,8 @@ namespace HelloWorldCore.Model
         }
 
         //vlastnosti třídy
-        public string FirstName { get; set; } //prvá vlastnost Person
+        public int Id { get; set; }
+        public string FirstName { get; set; } //prvá vlastnost/property Person
         public string LastName { get; set; } //druhá vlastnost Person
         public Address HomeAddress { get; set; } = new Address(); // vlastnos typu třídy ADDRESS 
                                                                   // = new Address(); je ekvivalent k vytváraniu v každom jednom konstruktore, ADDRESS bude vždy inicializovaná
