@@ -8,7 +8,7 @@ using HelloWorldCore.Model;
 
 namespace HelloWorldCore.Data
 {
-    class PersonData
+    public class PersonData
     {
         //static string PersonDataFile { get; set; } // statická položka, globální proměnná
         const string personDataFile = "people.txt"; //druhá možnosť
@@ -23,11 +23,11 @@ namespace HelloWorldCore.Data
             File.AppendAllText(personDataFile, line);
         }
 
-        public static List<Person> LoadPerson()
+        public static List<Person> LoadPerson(string file = "file.txt")
         {
             List<Person> people = new List<Person>();       //List<int> numbers = new List<int>(); = var numbers = new List<int>();
 
-            var lines = File.ReadAllLines(personDataFile);
+            var lines = File.ReadAllLines(file);
 
             foreach(var line in lines)
             {

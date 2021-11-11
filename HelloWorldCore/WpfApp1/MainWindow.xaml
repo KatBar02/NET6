@@ -1,22 +1,26 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+﻿<Window x:Name ="wMain" x:Class="WpfApp1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
+        Loaded="wMain_Loaded"
         Title="Hlavní okno" Height="450" Width="500">
     <Grid Background="#FF88D381" RenderTransformOrigin="0.5,0.5" Margin="0,0,-1,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="59*"/>
-            <ColumnDefinition Width="442*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnHello" Content="Hello" Margin="118,142,0,0" RenderTransformOrigin="0.293,0.527" Background="#FF734BDC" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" Width="123" Click="Button_Click" Height="40" VerticalAlignment="Top" Grid.Column="2"/>
-        <TextBlock x:Name="PopisTlacitka" HorizontalAlignment="Left" Margin="22,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="42" FontSize="22" Grid.Column="1" Grid.ColumnSpan="2"><Run Text="Zadej své jméno"/><Run Language="sk-sk" Text=":"/></TextBlock>
-        <TextBox x:Name="textJmeno" HorizontalAlignment="Left" Height="32" Margin="141,61,0,0" Text="Jméno" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" FontSize="22" Foreground="LightGray" Background="White" Grid.Column="2"/>
-        <TextBlock x:Name="textVyselek" HorizontalAlignment="Left" Margin="22,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Width="433" Height="129" Text="" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnDetailOsoby" Content="Detail Osoby" Margin="0,374,46,0" VerticalAlignment="Top" Height="36" Background="#FF734BDC" FontWeight="Bold" HorizontalAlignment="Right" Width="115" FontSize="16" Click="btnDetailOsoby_Click" Grid.Column="2"/>
+        <Button x:Name="btnHello" Content="Hello" Margin="308,38,0,0" RenderTransformOrigin="0.293,0.527" Background="#FF734BDC" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" Width="122" Click="Button_Click" Height="40" VerticalAlignment="Top" Grid.Column="3"/>
+        <TextBlock x:Name="PopisTlacitka" Margin="10,128,211,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" FontSize="22" Grid.Column="2" Grid.ColumnSpan="2"><Run Language="sk-sk" Text="List osob:"/></TextBlock>
+        <TextBox x:Name="textJmeno" HorizontalAlignment="Left" Height="32" Margin="29,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" FontSize="22" Foreground="LightGray" Background="White" Grid.Column="2" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="textVyselek" HorizontalAlignment="Left" Margin="187,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Width="214" Height="69" Text="" Grid.Column="3"/>
+        <Button x:Name="btnDetailOsoby" Content="Detail Osoby" Margin="0,110,13,0" VerticalAlignment="Top" Height="36" Background="#FF734BDC" FontWeight="Bold" HorizontalAlignment="Right" Width="115" FontSize="16" Click="btnDetailOsoby_Click" Grid.Column="3"/>
+        <DataGrid x:Name="grdPeople" Grid.Column="2" Margin="0,182,0,0" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

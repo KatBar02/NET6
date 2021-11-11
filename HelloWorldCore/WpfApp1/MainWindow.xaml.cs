@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HelloWorldCore.Model;
+using HelloWorldCore.Data;
 
 namespace WpfApp1
 {
@@ -66,6 +67,15 @@ namespace WpfApp1
             PersonDetail pdwindow = new PersonDetail(p);
             pdwindow.Show();
 
+        }
+
+        private void wMain_Loaded(object sender, RoutedEventArgs e)
+        {
+            string dir = @"C:\Users\barto\source\repos\skolenie\HelloWorldCore\HelloWorldCore\bin\Debug\net5.0\";
+            string filepath = System.IO.Path.Combine(dir + "people.txt");
+            var people = PersonData.LoadPerson(filepath);
+
+            grdPeople.ItemsSource = people;
         }
     }
 }
