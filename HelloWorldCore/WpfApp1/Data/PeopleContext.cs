@@ -17,6 +17,13 @@ namespace WpfApp1.Data
         public DbSet<Address> Addresses { get; set; } // Addresses bude ako tabuľka na základe Address triedy
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-           => options.UseSqlServer($"Server=(localdb);Database=peopledb");
+           => options.UseSqlServer($"Server=(LocalDB)\\MSSQLLocalDB;Database=peopledb");
+
+
+        //SQLite
+        //protected override void OnConfiguring(DbContextOptionsBuilder options)
+        //  => options.UseSqlite($"Data Source = peopledb.db");
+        //remove migration v PM Console
+        //add-migration initlite
     }
 }
