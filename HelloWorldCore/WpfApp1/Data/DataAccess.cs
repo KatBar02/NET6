@@ -34,8 +34,20 @@ namespace WpfApp1.Data
                 var dbperson = db.People.Find(personToSave.Id); // najdi v databázi v People záznam podľa PK personToSave.Id
                 dbperson.FirstName = personToSave.FirstName;
                 dbperson.LastName = personToSave.LastName;
-                dbperson.Birthdate = personToSave.Birthdate;
+                //dbperson.Birthdate = personToSave.Birthdate;
 
+                db.SaveChanges();
+
+
+
+            }
+        }
+
+        public static void CreatePersnon (Person personToCreate)
+        {
+            using (var db = new PeopleContext()) //db má vlastnosti/je typu PeopleContext
+            {
+                db.People.Add(personToCreate);
                 db.SaveChanges();
 
 

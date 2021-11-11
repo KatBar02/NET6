@@ -23,11 +23,20 @@ namespace WpfApp1
     public partial class PersonDetail : Window
     {
         Person person;
-       public PersonDetail(Person _person)
+        MainWindow mainWindow;
+        bool isNewPerson = false;
+       public PersonDetail(Person _person, MainWindow _mainWindow, bool _isNewPerson)
         {
             InitializeComponent();
 
-            person = _person;
+            mainWindow = _mainWindow;
+            isNewPerson = _isNewPerson;
+
+            if (isNewPerson) //pokud nová osoby - vytvor prázdnu instanci osoby
+                person = new Person();
+            else 
+                person = _person; //inak použi čo prišlo z MainWindow
+
             txtFirstName.Text = person.FirstName;
             txtLastName.Text = person.LastName;
             txtBirthDate.Text = person.Birthdate.ToShortDateString();
@@ -38,9 +47,18 @@ namespace WpfApp1
             person.FirstName = txtFirstName.Text; 
             person.LastName = txtLastName.Text;
 
-            DataAccess.SavePersonToDB(person);
-            
+            if (isNewPerson)
+                DataAccess.CreatePersnon(person);
+            else
+                DataAccess.SavePersonToDB(person);
 
+
+            DataAccess.LoadPeopleFromDB();
+
+            mainWindow.grdPeople.ItemsSource = DataAccess.people;
+            mainWindow.btnDetailOsoby.IsEnabled = false;
+
+            this.Close();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace WpfApp1
         {
             //MessageBox.Show("klik!");
             
-            textVyselek.Text = Hello(textJmeno.Text);
+            //textVyselek.Text = Hello(textJmeno.Text);
         }
 
         static string Hello(string name)
@@ -62,7 +62,7 @@ namespace WpfApp1
         private void btnDetailOsoby_Click(object sender, RoutedEventArgs e)
         {
             var p = (Person)grdPeople.SelectedItem; //SelectedItem vrací objekt typu person, preto je to ok pretypovaŤ na Person
-            PersonDetail pdwindow = new PersonDetail(p);
+            PersonDetail pdwindow = new PersonDetail(p, this, false);
             pdwindow.ShowDialog();
 
         }
@@ -78,6 +78,21 @@ namespace WpfApp1
 
             //LoadInitialDataset();
         }
+
+        private void grdPeople_SelectionChanged(object sender, SelectionChangedEventArgs e) 
+            // na vybranie v DataGrit sa tlačítlko zprístupní, pred tým nastaviť v jeho vlastnostiach Enabled = false
+        {
+            btnDetailOsoby.IsEnabled = true;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            PersonDetail pdwindow = new PersonDetail(null, this, true);
+            pdwindow.ShowDialog();
+        }
+
+
+
 
         //private void LoadInitialDataset ()
         //{
