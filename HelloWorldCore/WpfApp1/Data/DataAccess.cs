@@ -15,7 +15,7 @@ namespace WpfApp1.Data
 
         public static void LoadPeopleFromDB()
         {
-            using (var db = new PeopleContext()) //db má vlastnosti/je typu PeopleContext
+            using (var db = new PeopleContext()) //db má vlastnosti/je typu PeopleContext, using = spojení do dtb
             {
                 var peoplelist = db.People
                     .Include(x => x.HomeAddress)
@@ -23,6 +23,22 @@ namespace WpfApp1.Data
                     .ToList(); //list s dátami z databáze,CONNECTION je v PeopleContext, People je "najvyššia úroveň" v tých dátach PeopleContext
 
                 people = new ObservableCollection<Person>(peoplelist); // priradenie dát do kolekce
+
+            }
+        }
+
+        public static void SavePersonToDB(Person personToSave)
+        {
+            using (var db = new PeopleContext()) //db má vlastnosti/je typu PeopleContext
+            {
+                var dbperson = db.People.Find(personToSave.Id); // najdi v databázi v People záznam podľa PK personToSave.Id
+                dbperson.FirstName = personToSave.FirstName;
+                dbperson.LastName = personToSave.LastName;
+                dbperson.Birthdate = personToSave.Birthdate;
+
+                db.SaveChanges();
+
+
 
             }
         }

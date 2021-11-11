@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HelloWorldCore.Model;
+using WpfApp1.Data;
 
 namespace WpfApp1
 {
@@ -36,6 +37,9 @@ namespace WpfApp1
         {
             person.FirstName = txtFirstName.Text; 
             person.LastName = txtLastName.Text;
+
+            DataAccess.SavePersonToDB(person);
+            
 
         }
     }
