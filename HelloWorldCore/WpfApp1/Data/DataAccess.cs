@@ -22,6 +22,7 @@ namespace WpfApp1.Data
                     .Include(x => x.Cars)
                     .ToList(); //list s dátami z databáze,CONNECTION je v PeopleContext, People je "najvyššia úroveň" v tých dátach PeopleContext
 
+                
                 people = new ObservableCollection<Person>(peoplelist); // priradenie dát do kolekce
 
             }
@@ -54,5 +55,7 @@ namespace WpfApp1.Data
 
             }
         }
+
+      
     }
 }

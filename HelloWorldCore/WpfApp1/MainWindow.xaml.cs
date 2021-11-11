@@ -91,6 +91,30 @@ namespace WpfApp1
             pdwindow.ShowDialog();
         }
 
+        
+
+        private void txtFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string filtertext = txtFilter.Text.ToLower();
+
+            if (!string.IsNullOrEmpty(filtertext))
+            {
+                var filteData = DataAccess.people
+                    .Where(x => x.FirstName.ToLower().Contains(filtertext) || x.LastName.ToLower().Contains(filtertext));
+                grdPeople.ItemsSource = filteData;
+            }
+            else
+            {
+                grdPeople.ItemsSource = DataAccess.people;
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            txtFilter.Text = "";
+            grdPeople.ItemsSource = DataAccess.people;
+        }
+
 
 
 
