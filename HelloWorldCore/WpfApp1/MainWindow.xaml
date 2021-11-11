@@ -18,10 +18,10 @@
         <TextBlock x:Name="PopisTlacitka" Margin="10,128,211,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" FontSize="22" Grid.Column="2" Grid.ColumnSpan="2"><Run Language="sk-sk" Text="List osob:"/></TextBlock>
         <TextBox x:Name="txtFilter" HorizontalAlignment="Left" Height="32" Margin="29,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" FontSize="22" Foreground="LightGray" Background="White" Grid.Column="2" Grid.ColumnSpan="2" TextChanged="txtFilter_TextChanged"/>
         <Button x:Name="btnDetailOsoby" Content="Detail Osoby" Margin="0,124,0,0" VerticalAlignment="Top" Height="36" Background="#FF734BDC" FontWeight="Bold" HorizontalAlignment="Center" Width="114" FontSize="16" Click="btnDetailOsoby_Click" Grid.Column="3" IsEnabled="False"/>
-        <DataGrid x:Name="grdPeople" Grid.Column="2" Margin="0,182,0,0" Grid.ColumnSpan="2" SelectionChanged="grdPeople_SelectionChanged"/>
+        <DataGrid x:Name="grdPeople" Grid.Column="2" AutoGeneratingColumn="grdPeople_AutoGeneratingColumn" Margin="0,182,0,0" Grid.ColumnSpan="2" SelectionChanged="grdPeople_SelectionChanged"/>
         <Button Content="Nová Osoba" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="36" Margin="330,124,0,0" VerticalAlignment="Top" Width="134" Background="#FF734BDC" FontWeight="Bold" FontSize="18" Click="Button_Click_1"/>
-        <TextBlock Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="29,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="sk-sk" Text="Filter:"/></TextBlock>
-        <Button Content="X" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="32" Margin="250,63,0,0" VerticalAlignment="Top" Width="48" Click="Button_Click_2" />
+        <TextBlock Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="29,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Filter"/><Run Language="sk-sk" Text=" na"/><Run Text=" FirstName a La"/><Run Text="stN"/><Run Language="sk-sk" Text="a"/><Run Text="me"/><Run Language="sk-sk" Text=":"/><LineBreak/><Run/></TextBlock>
+        <Button Content="Vyčistit filter" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="32" Margin="250,63,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_2" Background="#FF734BDC" FontWeight="Bold" FontSize="16" />
 
     </Grid>
 </Window>

@@ -100,7 +100,8 @@ namespace WpfApp1
             if (!string.IsNullOrEmpty(filtertext))
             {
                 var filteData = DataAccess.people
-                    .Where(x => x.FirstName.ToLower().Contains(filtertext) || x.LastName.ToLower().Contains(filtertext));
+                    .Where(x => x.FirstName.ToLower().Contains(filtertext) 
+                             || x.LastName.ToLower().Contains(filtertext));
                 grdPeople.ItemsSource = filteData;
             }
             else
@@ -113,6 +114,14 @@ namespace WpfApp1
         {
             txtFilter.Text = "";
             grdPeople.ItemsSource = DataAccess.people;
+        }
+
+        private void grdPeople_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "Cars") //nad stĺpčekom Cars
+            {
+                e.Cancel = true; // stlpšek Cars sa negeneruje
+            }
         }
 
 
