@@ -17,6 +17,7 @@ namespace HelloWorldCore.Model
             Color = color;
             Kilometers = kilometers;
         }
+        public int Id { get; set; }
         public string PlateNumber { get; set; } //prvá vlastnost Car
         public string Color { get; set; } //2 vlastnost Car
         public double Kilometers { get; set; } //3 vlastnost Car
