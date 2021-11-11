@@ -60,10 +60,7 @@ namespace WpfApp1
 
         private void btnDetailOsoby_Click(object sender, RoutedEventArgs e)
         {
-            Person p = new Person();
-            p.FirstName = "Alice";
-            p.LastName = "Smith";
-            p.Birthdate = new DateTime(2020,01,01);
+            var p = (Person)grdPeople.SelectedItem; //SelectedItem vrací objekt typu person, preto je to ok pretypovaŤ na Person
             PersonDetail pdwindow = new PersonDetail(p);
             pdwindow.Show();
 
