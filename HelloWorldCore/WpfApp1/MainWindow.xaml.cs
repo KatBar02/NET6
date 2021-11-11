@@ -69,26 +69,27 @@ namespace WpfApp1
 
         private void wMain_Loaded(object sender, RoutedEventArgs e)
         {
-            string dir = @"C:\Users\barto\source\repos\skolenie\HelloWorldCore\HelloWorldCore\bin\Debug\net5.0\";
-            string filepath = System.IO.Path.Combine(dir + "people.txt");
-            var people = PersonData.LoadPerson(filepath);
+            //string dir = @"C:\Users\barto\source\repos\skolenie\HelloWorldCore\HelloWorldCore\bin\Debug\net5.0\";
+            //string filepath = System.IO.Path.Combine(dir + "people.txt");
+            //var people = PersonData.LoadPerson(filepath);
 
-            grdPeople.ItemsSource = people;
+            DataAccess.LoadPeopleFromDB();
+            grdPeople.ItemsSource = DataAccess.people;
 
-            LoadInitialDataset();
+            //LoadInitialDataset();
         }
 
-        private void LoadInitialDataset ()
-        {
-            using(var db = new PeopleContext()) //
-            {
-                string dir = @"C:\Users\barto\source\repos\skolenie\HelloWorldCore\HelloWorldCore\bin\Debug\net5.0\";
-                string filepath = System.IO.Path.Combine(dir + "people.txt");
-                var people = PersonData.LoadPerson(filepath);
+        //private void LoadInitialDataset ()
+        //{
+        //    using(var db = new PeopleContext()) //
+        //    {
+        //        string dir = @"C:\Users\barto\source\repos\skolenie\HelloWorldCore\HelloWorldCore\bin\Debug\net5.0\";
+        //        string filepath = System.IO.Path.Combine(dir + "people.txt");
+        //        var people = PersonData.LoadPerson(filepath);
 
-                db.People.AddRange(people); // uložené v pamati pc
-                db.SaveChanges(); //uloženie do dtb do všetkých tabuliek
-            }
-        }
+        //        db.People.AddRange(people); // uložené v pamati pc
+        //        db.SaveChanges(); //uloženie do dtb do všetkých tabuliek
+        //    }
+        //}
     }
 }
