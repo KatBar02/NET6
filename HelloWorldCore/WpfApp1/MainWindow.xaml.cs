@@ -62,7 +62,7 @@ namespace WpfApp1
         {
             var p = (Person)grdPeople.SelectedItem; //SelectedItem vrací objekt typu person, preto je to ok pretypovaŤ na Person
             PersonDetail pdwindow = new PersonDetail(p);
-            pdwindow.Show();
+            pdwindow.ShowDialog();
 
         }
 
