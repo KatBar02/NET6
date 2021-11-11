@@ -19,6 +19,10 @@ namespace WpfApp1.Data
         protected override void OnConfiguring(DbContextOptionsBuilder options)
            => options.UseSqlServer($"Server=(LocalDB)\\MSSQLLocalDB;Database=peopledb");
 
+        //SQL Server
+        //1. mať napísaný class PeopleContext : DbContext // vytvorenie mapovania na třídy a databázu
+        //2. Package MAnager Console: Add-Migration InitialCreatePEOPLEDB // vytvorenie mygračných súborov
+        //3. Package MAnager Console: Update-Database //spustenie migračného skriptu nad databázou
 
         //SQLite
         //protected override void OnConfiguring(DbContextOptionsBuilder options)
